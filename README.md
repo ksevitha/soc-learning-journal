@@ -9,15 +9,15 @@ This repository showcases practical SOC Analyst skills developed through real la
 ## 📂 Portfolio Roadmap
 
 ### 🌐 Networking
-- [ ] TCP Three-Way Handshake
-- [ ] ARP Spoofing Detection
-- [ ] DNS Analysis
-- [ ] DHCP Investigation
-- [ ] Routing (OSPF & BGP)
-- [ ] NAT & PAT
-- [ ] VLAN Analysis
-- [ ] Firewall Investigation
-- [ ] DNS Tunneling Detection
+- 🟢 TCP Three-Way Handshake *(Completed)*
+- 🟢 ARP Spoofing Detection *(Completed)*
+- 🟢 DNS Analysis *(Completed)*
+- 🟢 DHCP Investigation *(Completed)*
+- 🟢 Routing *(Completed)*
+- 🟢 NAT & PAT *(Completed)*
+- 🟢 VLAN Analysis *(Completed)*
+- 🟢 Firewall Investigation *(Completed)*
+- 🟢 DNS Tunneling Detection *(Completed)*
 
 ### 🔍 SOC Investigations
 - [ ] SSH Brute Force Investigation
