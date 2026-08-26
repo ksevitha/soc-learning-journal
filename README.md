@@ -1,4 +1,4 @@
-# 🛡️ SOC Learning Journal
+# 🛡️ SOC Investigation Portfolio
 
 > A hands-on cybersecurity portfolio documenting Blue Team investigations, networking labs, Linux administration, Wireshark analysis, Splunk, and SOC incident response.
 
