@@ -28,3 +28,35 @@ The objective was to identify failed login attempts using Wireshark, tcpdump, an
 - Identify failed authentication attempts
 - Correlate network packets with SSH logs
 - Determine whether the attacker gained access
+
+---
+
+## Attack Simulation
+
+The attack was performed in a controlled local laboratory to generate both successful and failed SSH authentication events for analysis.
+
+### Commands Executed
+
+**1. Verify SSH service**
+
+```bash
+sudo systemctl status ssh
+```
+
+**2. Confirm SSH is listening on port 22**
+
+```bash
+sudo ss -lntp | grep ':22'
+```
+
+**3. Attempt SSH login**
+
+```bash
+ssh brutelab@127.0.0.1
+```
+
+### Expected Result
+
+- SSH connection established over TCP port 22
+- Failed password attempts recorded
+- Authentication events logged by OpenSSH
