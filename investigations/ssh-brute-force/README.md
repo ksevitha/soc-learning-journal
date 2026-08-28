@@ -67,7 +67,7 @@ ssh brutelab@127.0.0.1
 
 ## Figure 1 — OpenSSH Service Verification
 
-![SSH Service](screenshots/systemctl.png)
+![SSH Service](./screenshots/systemctl.png)
 
 **Observation:** The OpenSSH service is active and running, confirming that the SSH server is available to accept connections on TCP port 22.
 
@@ -75,7 +75,7 @@ ssh brutelab@127.0.0.1
 
 ## Figure 2 — Failed SSH Authentication
 
-![SSH Service](screenshots/failed-login.png)
+![SSH Service](./screenshots/failed-login.png)
 
 **Observation:** An SSH login attempt used incorrect credentials. The server rejected the attempt and returned **Permission denied**, indicating failed password attempts.
 
@@ -83,7 +83,7 @@ ssh brutelab@127.0.0.1
 
 ## Figure 3 — Wireshark Packet Analysis
 
-![SSH Service](screenshots/wireshark-tcp22.png)
+![SSH Service](./screenshots/wireshark-tcp22.png)
 
 **Observation:** Wireshark captured the complete TCP three-way handshake (**SYN → SYN/ACK → ACK**) followed by the SSH protocol exchange on TCP port 22.
 
@@ -91,7 +91,7 @@ ssh brutelab@127.0.0.1
 
 ## Figure 4 — Failed Password Events
 
-![SSH Service](screenshots/Journalctl-failed.png)
+![SSH Service](./screenshots/Journalctl-failed.png)
 
 **Observation:** `journalctl` recorded multiple **Failed password** events for user `brutelab` originating from `127.0.0.1`, confirming unsuccessful authentication attempts.
 
@@ -99,7 +99,7 @@ ssh brutelab@127.0.0.1
 
 ## Figure 5 — Successful Authentication
 
-![SSH Service](screenshots/Journalctl-success.png)
+![SSH Service](./screenshots/Journalctl-success.png)
 
 **Observation:** A subsequent SSH login using the correct credentials generated an **Accepted password** event, confirming successful local authentication from `127.0.0.1`.
 
