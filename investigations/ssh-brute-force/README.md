@@ -67,7 +67,7 @@ ssh brutelab@127.0.0.1
 
 ## Figure 1 — OpenSSH Service Verification
 
-<img width="913" height="656" alt="image" src="https://github.com/user-attachments/assets/c8635e54-d14b-4647-bff0-82d09011ed31" />
+![SSH Service](screenshots/systemctl.png)
 
 **Observation:** The OpenSSH service is active and running, confirming that the SSH server is available to accept connections on TCP port 22.
 
@@ -75,7 +75,7 @@ ssh brutelab@127.0.0.1
 
 ## Figure 2 — Failed SSH Authentication
 
-<img width="907" height="317" alt="image" src="https://github.com/user-attachments/assets/449a7e50-3f8d-4114-9d63-f802e7e3a24e" />
+![SSH Service](screenshots/failed-login.png)
 
 **Observation:** An SSH login attempt used incorrect credentials. The server rejected the attempt and returned **Permission denied**, indicating failed password attempts.
 
@@ -83,7 +83,7 @@ ssh brutelab@127.0.0.1
 
 ## Figure 3 — Wireshark Packet Analysis
 
-<img width="1920" height="921" alt="image" src="https://github.com/user-attachments/assets/40cb3b4a-ae37-4520-ab5d-c6c7349d3e90" />
+![SSH Service](screenshots/wireshark-tcp22.png)
 
 **Observation:** Wireshark captured the complete TCP three-way handshake (**SYN → SYN/ACK → ACK**) followed by the SSH protocol exchange on TCP port 22.
 
@@ -91,7 +91,7 @@ ssh brutelab@127.0.0.1
 
 ## Figure 4 — Failed Password Events
 
-<img width="1312" height="277" alt="image" src="https://github.com/user-attachments/assets/9ec53a4d-dc90-4766-ac8e-7ef8f559320e" />
+![SSH Service](screenshots/Journalctl-failed.png)
 
 **Observation:** `journalctl` recorded multiple **Failed password** events for user `brutelab` originating from `127.0.0.1`, confirming unsuccessful authentication attempts.
 
@@ -99,7 +99,7 @@ ssh brutelab@127.0.0.1
 
 ## Figure 5 — Successful Authentication
 
-<img width="1302" height="921" alt="image" src="https://github.com/user-attachments/assets/85651445-d8f6-43af-9b7c-5c5355aa744a" />
+![SSH Service](screenshots/Journalctl-success.png)
 
 **Observation:** A subsequent SSH login using the correct credentials generated an **Accepted password** event, confirming successful local authentication from `127.0.0.1`.
 
