@@ -43,7 +43,7 @@ This created a transparent Man-in-the-Middle (MITM) attack while maintaining net
 
 ### Figure 1 — Kali Network Configuration
 
-![Kali Network Configuration](./screenshots/01-kali-ifconfig.png)
+![Kali Network Configuration](./screenshots/kali-ifconfig.png)
 
 **Observation:** Kali's `eth0` interface was configured with IP address `10.0.2.3`, establishing the attacker host used in the lab.
 
