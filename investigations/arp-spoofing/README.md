@@ -35,3 +35,13 @@ The objective was to detect malicious ARP behavior, verify changes in MAC addres
 - The Windows 7 victim updated its ARP cache, mapping gateway IP `10.0.2.1` to the attacker's MAC address.
 - Traffic was redirected through the Kali attacker, demonstrating a Man-in-the-Middle (MITM) attack.
 - The observed behavior maps to MITRE ATT&CK **T1557 – Adversary-in-the-Middle**.
+
+## MITRE ATT&CK Mapping
+
+| Tactic | Technique | ID |
+|---------|-----------|----|
+| Collection | Adversary-in-the-Middle | T1557 |
+
+**Why:** Intercept communication between the victim and the gateway.
+
+**Evidence:** Forged ARP Reply packets in Wireshark, poisoned ARP cache on Windows, and bidirectional ARP spoofing using `arpspoof`.
