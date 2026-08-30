@@ -131,10 +131,6 @@ This created a transparent Man-in-the-Middle (MITM) attack while maintaining net
 - MITRE ATT&CK mapping
 - SOC investigation documentation
 
-
-## MITRE ATT&CK Mapping
-
-| Tactic | Technique | ID |
 |---------|-----------|----|
 | Collection | Adversary-in-the-Middle | T1557 |
 
