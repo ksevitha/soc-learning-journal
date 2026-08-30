@@ -51,7 +51,7 @@ This created a transparent Man-in-the-Middle (MITM) attack while maintaining net
 
 ### Figure 2 — Windows Victim Configuration
 
-![Windows Network Configuration](./screenshots/02-windows-ipconfig.png)
+![Windows Network Configuration](./screenshots/windows-ipconfig.png)
 
 **Observation:** The Windows 7 victim was configured with IP address `10.0.2.5` and default gateway `10.0.2.1`, confirming that both systems were operating on the same network.
 
@@ -59,7 +59,7 @@ This created a transparent Man-in-the-Middle (MITM) attack while maintaining net
 
 ### Figure 3 — ARP Spoofing Against the Gateway
 
-![ARP Spoofing Gateway](./screenshots/03-arpspoof-gateway.png)
+![ARP Spoofing Gateway](./screenshots/arpspoof-gateway.png)
 
 **Observation:** Kali used `arpspoof` to send forged ARP replies to the Windows victim, falsely associating gateway IP `10.0.2.1` with Kali's MAC address.
 
@@ -67,7 +67,7 @@ This created a transparent Man-in-the-Middle (MITM) attack while maintaining net
 
 ### Figure 4 — ARP Spoofing Against the Victim
 
-![ARP Spoofing Victim](./screenshots/04-arpspoof-victim.png)
+![ARP Spoofing Victim](./screenshots/arpspoof-victim.png)
 
 **Observation:** Kali sent forged ARP replies in the reverse direction, causing the gateway to associate the victim IP `10.0.2.5` with Kali's MAC address and establishing bidirectional MITM positioning.
 
@@ -75,7 +75,7 @@ This created a transparent Man-in-the-Middle (MITM) attack while maintaining net
 
 ### Figure 5 — Poisoned Windows ARP Cache
 
-![Windows Poisoned ARP Cache](./screenshots/05-windows-arp-cache.png)
+![Windows Poisoned ARP Cache](./screenshots/windows-arp-cache.png)
 
 **Observation:** The Windows ARP cache mapped gateway IP `10.0.2.1` to Kali's MAC address `08-00-27-5f-cb-9a`, confirming successful ARP cache poisoning.
 
