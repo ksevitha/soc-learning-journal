@@ -28,13 +28,101 @@ The objective was to detect malicious ARP behavior, verify changes in MAC addres
 - Detect ARP poisoning behavior
 - Document findings using MITRE ATT&CK
 
+## Attack Simulation
+
+A Windows 7 virtual machine acted as the victim, while Kali Linux acted as the attacker. Both systems were connected to the same VMware NAT network.
+
+The attacker enabled IP forwarding and used `arpspoof` to send forged ARP reply packets in both directions:
+
+- Victim (10.0.2.5) → Gateway (10.0.2.1)
+- Gateway (10.0.2.1) → Victim (10.0.2.5)
+
+This created a transparent Man-in-the-Middle (MITM) attack while maintaining network connectivity.
+
+## Evidence Collection
+
+### Figure 1 — Baseline ARP Neighbor Table
+
+![ARP Neighbor Table](./screenshots/01-ip-neigh.png)
+
+**Observation:** Kali verified the legitimate gateway mapping before the attack.
+
+---
+
+### Figure 2 — Legitimate ARP Traffic
+
+![Wireshark ARP](./screenshots/02-wireshark-arp.png)
+
+**Observation:** Wireshark captured normal ARP Request and ARP Reply packets.
+
+---
+
+### Figure 3 — IP Forwarding Enabled
+
+![IP Forwarding](./screenshots/03-ip-forwarding.png)
+
+**Observation:** IP forwarding allowed Kali to relay intercepted traffic.
+
+---
+
+### Figure 4 — ARP Spoofing in Progress
+
+![ARP Spoof](./screenshots/04-arpspoof-running.png)
+
+**Observation:** Kali continuously transmitted forged ARP Reply packets.
+
+---
+
+### Figure 5 — Poisoned Windows ARP Cache
+
+![Windows ARP Cache](./screenshots/05-windows-arp-cache.png)
+
+**Observation:** Windows mapped gateway IP `10.0.2.1` to Kali's MAC address, confirming successful ARP cache poisoning.
+
 ## Findings
 
-- Successfully performed a controlled ARP spoofing attack within a VMware lab environment.
-- Forged ARP reply packets were generated using `arpspoof` and captured in Wireshark.
-- The Windows 7 victim updated its ARP cache, mapping gateway IP `10.0.2.1` to the attacker's MAC address.
-- Traffic was redirected through the Kali attacker, demonstrating a Man-in-the-Middle (MITM) attack.
-- The observed behavior maps to MITRE ATT&CK **T1557 – Adversary-in-the-Middle**.
+## Investigation Timeline
+
+| Stage | Evidence |
+|--------|----------|
+| Baseline ARP verified | `ip neigh` |
+| ARP traffic captured | Wireshark |
+| IP forwarding enabled | `sysctl` |
+| Forged ARP replies generated | `arpspoof` |
+| Windows ARP cache poisoned | `arp -a` |
+
+---
+
+## Findings
+
+- Successfully executed a controlled ARP spoofing attack in a VMware laboratory.
+- Forged ARP Reply packets poisoned the Windows ARP cache.
+- The gateway IP (`10.0.2.1`) was redirected to Kali's MAC address.
+- IP forwarding allowed Kali to transparently relay packets, creating a functional MITM attack.
+- The investigation demonstrates how Layer 2 attacks redirect Ethernet frames while preserving Layer 3 IP routing.
+
+---
+
+## MITRE ATT&CK Mapping
+
+| MITRE Element | Value |
+|--------------|-------|
+| **Tactic (Why?)** | Credential Access |
+| **Technique (How?)** | T1557 – Adversary-in-the-Middle |
+| **Procedure (Evidence)** | Forged ARP Reply packets, poisoned Windows ARP cache, and bidirectional traffic interception using `arpspoof`. |
+
+---
+
+## Skills Demonstrated
+
+- ARP protocol analysis
+- Wireshark packet capture
+- ARP cache investigation
+- Man-in-the-Middle (MITM)
+- Linux networking (`ip neigh`, `sysctl`)
+- ARP spoofing with `arpspoof`
+- MITRE ATT&CK mapping
+- SOC incident documentation
 
 ## MITRE ATT&CK Mapping
 
