@@ -59,7 +59,7 @@ This created a transparent Man-in-the-Middle (MITM) attack while maintaining net
 
 ### Figure 3 — ARP Spoofing Against the Gateway
 
-![ARP Spoofing Gateway](./screenshots/arpspoof-gateway.png)
+![ARP Spoofing Gateway](./screenshots/arpspoof-victim.png)
 
 **Observation:** Kali used `arpspoof` to send forged ARP replies to the Windows victim, falsely associating gateway IP `10.0.2.1` with Kali's MAC address.
 
@@ -67,7 +67,7 @@ This created a transparent Man-in-the-Middle (MITM) attack while maintaining net
 
 ### Figure 4 — ARP Spoofing Against the Victim
 
-![ARP Spoofing Victim](./screenshots/arpspoof-victim.png)
+![ARP Spoofing Victim](./screenshots/arpspoof-gateway.png)
 
 **Observation:** Kali sent forged ARP replies in the reverse direction, causing the gateway to associate the victim IP `10.0.2.5` with Kali's MAC address and establishing bidirectional MITM positioning.
 
