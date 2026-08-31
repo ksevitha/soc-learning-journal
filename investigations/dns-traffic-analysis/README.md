@@ -68,7 +68,7 @@ nslookup github.com
 
 ## Figure 1 — Windows DNS Lookup
 
-![Windows DNS Lookup](screenshots/01-windows-nslookup.png)
+![Windows DNS Lookup](screenshots/windows-nslookup.png)
 
 **Observation:** Windows successfully queried the configured DNS server (`192.168.1.1`) to resolve `github.com` and received the IPv4 address `20.207.73.82`.
 
