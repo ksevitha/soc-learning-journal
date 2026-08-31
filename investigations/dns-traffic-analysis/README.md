@@ -76,7 +76,7 @@ nslookup github.com
 
 ## Figure 2 — Wireshark DNS Query and Response
 
-![Wireshark DNS Query Response](screenshots/02-wireshark-query-response.png)
+![Wireshark DNS Query Response](screenshots/wireshark-query-response.png)
 
 **Observation:** Wireshark captured both the **DNS Standard Query** from the client (`10.0.2.5`) and the **DNS Standard Query Response** from the DNS server (`192.168.1.1`), confirming successful DNS resolution over **UDP port 53**.
 
@@ -84,7 +84,7 @@ nslookup github.com
 
 ## Figure 3 — DNS A Record Analysis
 
-![DNS A Record](screenshots/03-dns-a-record.png)
+![DNS A Record](screenshots/dns-a-record.png)
 
 **Observation:** The DNS response contains an **A (Host Address)** record mapping `github.com` to the IPv4 address `20.207.73.82` with a **TTL of 24 seconds**, allowing the client to temporarily cache the result.
 
