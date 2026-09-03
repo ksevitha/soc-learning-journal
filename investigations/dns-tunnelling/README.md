@@ -61,7 +61,7 @@ sudo iodine -f -P Sevitha123 10.0.2.3 lab.local
 
 ### Screenshot
 
-![Ubuntu Client](screenshots/02-ubuntu-iodine-client.png)
+![Ubuntu Client](screenshots/ubuntu-iodine-client.png)
 
 The victim successfully established a tunnel and received the virtual IP `10.0.0.2`.
 
@@ -75,7 +75,7 @@ ping -c 4 10.0.0.1
 
 ### Screenshot
 
-![ICMP Tunnel](screenshots/03-ubuntu-ping.png)
+![ICMP Tunnel](screenshots/ubuntu-ping.png)
 
 Although the destination is `10.0.0.1`, the ICMP packets travel through the DNS tunnel created by Iodine.
 
@@ -91,7 +91,7 @@ dns
 
 ### Screenshot
 
-![DNS Tunnel](screenshots/04-wireshark-dns-tunnel.png)
+![DNS Tunnel](screenshots/wireshark-dns-tunnel.png)
 
 Observed communication:
 
@@ -107,7 +107,7 @@ The physical interface captures only the DNS transport, not the virtual `10.0.0.
 
 ### Screenshot
 
-![Malformed DNS](screenshots/05-malformed-dns-packet.png)
+![Malformed DNS](screenshots/malformed-dns-packet.png)
 
 ### Indicators
 
