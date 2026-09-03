@@ -45,7 +45,7 @@ sudo iodined -f -c -P Sevitha123 10.0.0.1 lab.local
 
 ### Screenshot
 
-![Kali Server](screenshots/01-kali-iodined-server.png)
+![Kali Server](screenshots/kali-iodined-server.png)
 
 The `dns0` virtual interface was created and the server began listening for DNS tunnel connections.
 
