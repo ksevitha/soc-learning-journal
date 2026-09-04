@@ -75,7 +75,7 @@ The DHCP server confirms the lease and assigns the IP address.
 
 Shows the complete lease renewal process using `dhclient`.
 
-**Screenshot:** `screenshots/dhclient-terminal.png`
+**Screenshot:** `screenshots/dhclient-terminal.png'
 
 ### Wireshark Capture
 
@@ -87,7 +87,7 @@ Captured the full DORA sequence:
 - DHCP Request
 - DHCP ACK
 
-**Screenshot:** `screenshots/dhcp-dora.png`
+**Screenshot:** `screenshots/dhcp-dora.png'
 
 ---
 
