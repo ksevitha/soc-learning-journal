@@ -41,7 +41,7 @@ sudo a2ensite default-ssl
 
 **Evidence**
 
-![Enable SSL](screenshots/01-enable-ssl.png)
+![Enable SSL](screenshots/enable-ssl.png)
 
 ---
 
@@ -56,7 +56,7 @@ sudo systemctl status apache2
 
 **Evidence**
 
-![Apache Running](screenshots/02-apache-running.png)
+![Apache Running](screenshots/apache-running.png)
 
 ---
 
@@ -72,7 +72,7 @@ Observed the **Client Hello** packet initiated by Ubuntu.
 
 **Evidence**
 
-![TLS Client Hello](screenshots/03-tls-client-hello.png)
+![TLS Client Hello](screenshots/tls-client-hello.png)
 
 ---
 
@@ -84,7 +84,7 @@ No username or password was visible.
 
 **Evidence**
 
-![Encrypted Application Data](screenshots/04-encrypted-application-data.png)
+![Encrypted Application Data](screenshots/encrypted-application-data.png)
 
 ---
 
