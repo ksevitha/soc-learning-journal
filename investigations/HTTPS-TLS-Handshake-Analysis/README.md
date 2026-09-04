@@ -60,7 +60,17 @@ sudo systemctl status apache2
 
 ---
 
-### 3. Capture the TLS Handshake
+### 3. Generate HTTPS Traffic (Ubuntu)
+
+From the Ubuntu client, access the secure website using curl.
+
+```bash
+curl -k -u sevi:Sevi@123 https://10.0.2.3/secure/
+```
+
+**Purpose:** Generate authenticated HTTPS traffic for Wireshark analysis.
+
+### 4. Capture the TLS Handshake
 
 Applied the Wireshark display filter:
 
@@ -76,7 +86,7 @@ Observed the **Client Hello** packet initiated by Ubuntu.
 
 ---
 
-### 4. Verify Encrypted Traffic
+### 5. Verify Encrypted Traffic
 
 After the TLS handshake, HTTP data became encrypted as **TLS Application Data**.
 
