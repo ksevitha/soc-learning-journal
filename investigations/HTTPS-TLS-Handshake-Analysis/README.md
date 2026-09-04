@@ -1,4 +1,4 @@
-# 🔐 Investigation 06 — HTTPS & TLS Handshake Analysis
+# HTTPS & TLS Handshake Analysis
 
 > Demonstrating how HTTPS encrypts credentials and protects web traffic from network interception.
 
