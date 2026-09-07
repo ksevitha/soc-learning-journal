@@ -53,7 +53,7 @@ dhcp
 
 The client broadcasts a request searching for any available DHCP server.
 
-**Screenshot:** `screenshots/02-dhcp-dora.png`
+**Screenshot:** `screenshots/dhcp-dora.png`
 
 ### 2. DHCP Offer
 
